@@ -21,6 +21,7 @@
         ],
         "styles": [
           "apps/shell/src/styles.scss"
+          ""
         ],
         "scripts": [],
         "customWebpackConfig": {

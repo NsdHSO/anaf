@@ -1,6 +1,6 @@
 {
   "projectType": "application",
-  "sourceRoot": "apps/frame/src",
+  "sourceRoot": "apps/dashboard/src",
   "prefix": "anaf",
   "targets": {
     "build": {
@@ -9,22 +9,22 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/frame",
-        "index": "apps/frame/src/index.html",
-        "main": "apps/frame/src/main.ts",
-        "polyfills": "apps/frame/src/polyfills.ts",
-        "tsConfig": "apps/frame/tsconfig.app.json",
+        "outputPath": "dist/apps/dashboard",
+        "index": "apps/dashboard/src/index.html",
+        "main": "apps/dashboard/src/main.ts",
+        "polyfills": "apps/dashboard/src/polyfills.ts",
+        "tsConfig": "apps/dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/frame/src/favicon.ico",
-          "apps/frame/src/assets"
+          "apps/dashboard/src/favicon.ico",
+          "apps/dashboard/src/assets"
         ],
         "styles": [
-          "apps/frame/src/styles.scss"
+          "apps/dashboard/src/styles.scss"
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/frame/webpack.config.js"
+          "path": "apps/dashboard/webpack.config.js"
         },
         "commonChunk": false
       },
@@ -44,13 +44,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/frame/src/environments/environment.ts",
-              "with": "apps/frame/src/environments/environment.prod.ts"
+              "replace": "apps/dashboard/src/environments/environment.ts",
+              "with": "apps/dashboard/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/frame/webpack.prod.config.js"
+            "path": "apps/dashboard/webpack.prod.config.js"
           }
         },
         "development": {
@@ -68,10 +68,10 @@
       "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
-          "browserTarget": "frame:build:production"
+          "browserTarget": "dashboard:build:production"
         },
         "development": {
-          "browserTarget": "frame:build:development"
+          "browserTarget": "dashboard:build:development"
         }
       },
       "defaultConfiguration": "development",
@@ -83,26 +83,26 @@
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "frame:build",
-        "extraWebpackConfig": "apps/frame/webpack.config.js"
+        "browserTarget": "dashboard:build",
+        "extraWebpackConfig": "apps/dashboard/webpack.config.js"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/frame/**/*.ts",
-          "apps/frame/**/*.html"
+          "apps/dashboard/**/*.ts",
+          "apps/dashboard/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/frame"
+        "coverage/apps/dashboard"
       ],
       "options": {
-        "jestConfig": "apps/frame/jest.config.ts",
+        "jestConfig": "apps/dashboard/jest.config.ts",
         "passWithNoTests": true
       }
     }
