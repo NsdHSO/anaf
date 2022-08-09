@@ -13,7 +13,16 @@ const routes: Routes = [
       })
         .then((m) => m.DashboardPlanningModule),
   },
-
+  {
+    path: 'fleet',
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteName: 'fleet',
+        type:"manifest",
+        exposedModule: './Module',
+      })
+        .then((m) => m.FleetModule),
+  },
   // ,
   // {
   //   path: 'test',

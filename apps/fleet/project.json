@@ -1,6 +1,6 @@
 {
   "projectType": "application",
-  "sourceRoot": "apps/shell/src",
+  "sourceRoot": "apps/fleet/src",
   "prefix": "anaf",
   "targets": {
     "build": {
@@ -9,22 +9,22 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/shell",
-        "index": "apps/shell/src/index.html",
-        "main": "apps/shell/src/main.ts",
-        "polyfills": "apps/shell/src/polyfills.ts",
-        "tsConfig": "apps/shell/tsconfig.app.json",
+        "outputPath": "dist/apps/fleet",
+        "index": "apps/fleet/src/index.html",
+        "main": "apps/fleet/src/main.ts",
+        "polyfills": "apps/fleet/src/polyfills.ts",
+        "tsConfig": "apps/fleet/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/shell/src/favicon.ico",
-          "apps/shell/src/assets"
+          "apps/fleet/src/favicon.ico",
+          "apps/fleet/src/assets"
         ],
         "styles": [
-          "apps/shell/src/styles.scss"
+          "apps/fleet/src/styles.scss"
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/shell/webpack.config.js"
+          "path": "apps/fleet/webpack.config.js"
         },
         "commonChunk": false
       },
@@ -44,13 +44,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/shell/src/environments/environment.ts",
-              "with": "apps/shell/src/environments/environment.prod.ts"
+              "replace": "apps/fleet/src/environments/environment.ts",
+              "with": "apps/fleet/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/shell/webpack.prod.config.js"
+            "path": "apps/fleet/webpack.prod.config.js"
           }
         },
         "development": {
@@ -68,41 +68,41 @@
       "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
-          "browserTarget": "shell:build:production"
+          "browserTarget": "fleet:build:production"
         },
         "development": {
-          "browserTarget": "shell:build:development"
+          "browserTarget": "fleet:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4200,
-        "publicHost": "http://localhost:4200"
+        "port": 4202,
+        "publicHost": "http://localhost:4202"
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "shell:build",
-        "extraWebpackConfig": "apps/shell/webpack.config.js"
+        "browserTarget": "fleet:build",
+        "extraWebpackConfig": "apps/fleet/webpack.config.js"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/shell/**/*.ts",
-          "apps/shell/**/*.html"
+          "apps/fleet/**/*.ts",
+          "apps/fleet/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/shell"
+        "coverage/apps/fleet"
       ],
       "options": {
-        "jestConfig": "apps/shell/jest.config.ts",
+        "jestConfig": "apps/fleet/jest.config.ts",
         "passWithNoTests": true
       }
     }

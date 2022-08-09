@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardPlanningComponent } from './dashboard-planning.component';
 import { DashboardPlanningRoutingModule } from './dashboard-planning-routing.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {StoreModule} from "@ngrx/store";
 
 
 
@@ -12,6 +13,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CommonModule,
     DashboardPlanningRoutingModule,
     DragDropModule,
+    StoreModule,
+
   ],
   exports: [DragDropModule],
 })
