@@ -1,5 +1,7 @@
 {
 	"dashboard": "http://localhost:4201/remoteEntry.js",
-  "fleet": "http://localhost:4202/remoteEntry.js"
+  "fleet": "http://localhost:4202/remoteEntry.js",
+  "contentBar": "http://localhost:4203/remoteEntry.js"
+
 
 }

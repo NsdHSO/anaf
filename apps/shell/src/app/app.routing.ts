@@ -8,26 +8,19 @@ const routes: Routes = [
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'dashboard',
-        type:"manifest",
+        type: 'manifest',
         exposedModule: './Module',
-      })
-        .then((m) => m.DashboardPlanningModule),
+      }).then((m) => m.DashboardPlanningModule),
   },
   {
     path: 'fleet',
     loadChildren: () =>
       loadRemoteModule({
         remoteName: 'fleet',
-        type:"manifest",
+        type: 'manifest',
         exposedModule: './Module',
-      })
-        .then((m) => m.FleetModule),
+      }).then((m) => m.FleetModule),
   },
-  // ,
-  // {
-  //   path: 'test',
-  //   loadChildren: () => import('mfe1/Module').then(m => m.AppModule)
-  // }
 ];
 
 @NgModule({

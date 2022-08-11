@@ -1,6 +1,6 @@
 {
   "projectType": "application",
-  "sourceRoot": "apps/shell/src",
+  "sourceRoot": "apps/content-bar/src",
   "prefix": "anaf",
   "targets": {
     "build": {
@@ -9,23 +9,22 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/apps/shell",
-        "index": "apps/shell/src/index.html",
-        "main": "apps/shell/src/main.ts",
-        "polyfills": "apps/shell/src/polyfills.ts",
-        "tsConfig": "apps/shell/tsconfig.app.json",
+        "outputPath": "dist/apps/content-bar",
+        "index": "apps/content-bar/src/index.html",
+        "main": "apps/content-bar/src/main.ts",
+        "polyfills": "apps/content-bar/src/polyfills.ts",
+        "tsConfig": "apps/content-bar/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/shell/src/favicon.ico",
-          "apps/shell/src/assets"
+          "apps/content-bar/src/favicon.ico",
+          "apps/content-bar/src/assets"
         ],
         "styles": [
-          "apps/shell/src/styles.scss",
-          "node_modules/tailwindcss/tailwind.css"
+          "apps/content-bar/src/styles.scss"
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/shell/webpack.config.js"
+          "path": "apps/content-bar/webpack.config.js"
         },
         "commonChunk": false
       },
@@ -45,13 +44,13 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/shell/src/environments/environment.ts",
-              "with": "apps/shell/src/environments/environment.prod.ts"
+              "replace": "apps/content-bar/src/environments/environment.ts",
+              "with": "apps/content-bar/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/shell/webpack.prod.config.js"
+            "path": "apps/content-bar/webpack.prod.config.js"
           }
         },
         "development": {
@@ -69,41 +68,41 @@
       "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
-          "browserTarget": "shell:build:production"
+          "browserTarget": "content-bar:build:production"
         },
         "development": {
-          "browserTarget": "shell:build:development"
+          "browserTarget": "content-bar:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "port": 4200,
-        "publicHost": "http://localhost:4200"
+        "port": 4203,
+        "publicHost": "http://localhost:4203"
       }
     },
     "extract-i18n": {
       "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "shell:build",
-        "extraWebpackConfig": "apps/shell/webpack.config.js"
+        "browserTarget": "content-bar:build",
+        "extraWebpackConfig": "apps/content-bar/webpack.config.js"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/shell/**/*.ts",
-          "apps/shell/**/*.html"
+          "apps/content-bar/**/*.ts",
+          "apps/content-bar/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "coverage/apps/shell"
+        "coverage/apps/content-bar"
       ],
       "options": {
-        "jestConfig": "apps/shell/jest.config.ts",
+        "jestConfig": "apps/content-bar/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -2,9 +2,11 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  remotes:{
-    "contentBar": "http://localhost:4203/remoteEntry.js"
+  name: 'contentBar',
+  filename: "remoteEntry.js",
 
+  exposes: {
+    './Component': './apps/content-bar/src/app/header-bar/header.component.ts',
   },
 
   shared: {

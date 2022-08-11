@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "content-bar": "apps/content-bar",
     "dashboard": "apps/dashboard",
     "fleet": "apps/fleet",
     "shell": "apps/shell"
